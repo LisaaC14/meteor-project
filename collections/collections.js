@@ -4,19 +4,18 @@ series = new Mongo.Collection( "series" );
 Meteor.methods({
     addSerie : function(serie) {
       series.insert( { name : serie.name , year : serie.year } );
-    }
- })
-
-// Supprimer la série
-Meteor.methods({
+    },
+    // Supprimer la série
     removeThat: function(serie) {
       series.remove( serie.id );
+    },
+    // Modifier une série
+    updateThat : function(serie) {
+      series.update (
+        serie.id
+        ,{
+            $set : { name : serie.name }
+        }
+    );
     }
  })
-
- // Supprimer la série
- Meteor.methods({
-     modifyThat: function(serie) {
-       series.update( serie.id, { $set : { name : $new_name }} );
-     }
-  })

@@ -4,7 +4,6 @@
   <table>
     <thead>
       <tr>
-      <td> N° </td>
        <td> Nom de la série </td>
         <td> Année </td>
       </tr>
@@ -14,7 +13,12 @@
          <td> {{ name }} </td>
          <td> {{ year }} </td>
          <td><button class="remove_serie">X</button></td>
-         <td><button class="update_serie">Modifier</button></td>
+         <td>
+           <input class="new_name" type="text" placeholder="Nouveau nom"/>
+           <button class="update_serie">Modifier</button>
+         </td>
+
+
      </tr>
      {{/each}}
 

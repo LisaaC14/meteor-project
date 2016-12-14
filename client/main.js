@@ -60,7 +60,7 @@ if ( Meteor.isClient )
 					}
 				}
 			} );
-			
+
 // Pour supprimer une série
 	Template.liste_tpl.events
 		( {
@@ -72,4 +72,24 @@ if ( Meteor.isClient )
 				});
 			 }
 	 });
+
+	 // Pour modifier une série
+		 Template.liste_tpl.events
+			 ( {
+			 'click .update_serie' : function( event, template )
+				 {
+					 var $name = template.find(".new_name");
+					 var name = $name.value;
+					 var id = this._id;
+					 if( name.value !== ""){
+
+						 Meteor.call("updateThat", {
+							 id : id,
+							 name : name
+						 });
+
+					 }
+				 }
+			 } );
+
 }
