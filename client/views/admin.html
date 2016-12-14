@@ -1,0 +1,26 @@
+<template name="admin">
+	{{ > liste_tpl }}
+
+<hr>
+
+	<h2>Comme vous êtes un admin vous pouvez effectuer des modifications sur celui-ci.</h2>
+
+    <div id="form">
+
+        <div>Pour ajouter une nouvelle série :</div>
+				<br />
+					<input id="name" type="text" placeholder="Nom de la série"/>
+					<input id="year" type="number" placeholder="Année"/>
+
+        <button id="submit_serie">Ajouter</button>
+
+				<br /><br />
+
+				<div>Pour modifier une série :</div>
+					<input id="new_name" type="text" placeholder="Nouveau nom"/>
+					<input id="new_year" type="number" placeholder="Nouvelle année"/>
+
+				<button id="update_serie">Modifier</button>
+
+    </div>
+</template>
